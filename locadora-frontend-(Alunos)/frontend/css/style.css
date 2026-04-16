@@ -1,0 +1,116 @@
+/* ============================================================
+   ESTILOS GLOBAIS
+   Configurações base que afetam toda a aplicação.
+   O Bootstrap já cuida da maioria — aqui ficam os ajustes finos.
+   ============================================================ */
+body {
+    background-color: #f8f9fa; /* Fundo claro para toda a aplicação */
+    font-family: 'Segoe UI', Tahoma, sans-serif; /* Fonte moderna e legível */
+
+    /* flexbox no body garante que o footer fique sempre no fundo, mesmo quando há pouco conteúdo na página*/
+
+   display: flex;
+   flex-direction: column;
+   min-height: 100vh;
+}
+
+/* ============================================================
+   TELA DE LOGIN
+   ============================================================ */
+
+/* container centrazado com largura maxima para a tela de login */
+.login-container {
+   max-width: 400px;
+   margin: 80px auto;
+}
+
+/* Caeçalho azul dos cards de login */
+.card-header-blue {
+   background-color: #0d6efd;
+   color: white;
+   font-weight: bold;
+}
+
+/* Caixa azul clara de informações */
+info-box {
+   background-color: #e7f1ff;
+   border-radius: 6px;
+   padding: 15px;
+}
+
+/* ============================================================
+   TABELA DO PAINEL ADMINISTRATIVO
+   ============================================================ */
+
+   /* Evita que os botões de ação na tabela quebrem para  linha de baixo */
+table-actions {
+   white-space: nowrap;
+}
+
+/* campo numerico compacto usado dentro da tabela */
+.table-actions input[type="number"]{
+   width: 70px;
+   text-align: center;
+}  
+
+/* ============================================================
+   IMAGENS DE VEÍCULOS
+   ============================================================ */
+
+   /* Miniatura quadrada usada na tabela do painel administrativo */
+.admin-mini-img {
+   width: 60px;
+   height: 60px;
+
+   /* Object-fit: cover RECORTA A IMAGEM PARA PREENCHER O ESPAÇO SEM DISTORCER */
+   object-fit: cover;
+   border-radius: 8px;
+   border: 1px solid #ccc;
+   background-color: #fff;
+   padding: 2px;
+}
+
+/* ============================================================
+   VITRINE PÚBLICA — HERO BANNER
+   Banner com imagem de fundo coberta por um gradiente escuro.
+   Isso garante que o texto branco seja legível sobre qualquer imagem.
+   ============================================================ */
+.hero-banner {
+    background:
+        /* Gradiente semi-transparente por cima da imagem */
+        linear-gradient(rgba(10, 37, 64, 0.85), rgba(10, 37, 64, 0.85)),
+        /* Imagem de fundo carregada do Unsplash */
+        url('https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?auto=format&fit=crop&q=80&w=1920')
+        center / cover;
+}
+
+/* ============================================================
+   VITRINE PÚBLICA — CARDS DE VEÍCULOS
+   ============================================================ */
+
+/* Imagem dos cards com altura fixa para uniformidade visual */
+.vitrine-img {
+   height: 240px;
+   width: 100%;
+   object-fit: cover; /* Corta a imagem para preencher o espaço sem distorcer */
+
+   /* transição suave para efeitos de zoom ao passar o mouse */
+   transition: transform 0.4s ease;
+}
+
+/* card com animação de elevação ao passar o mouse */
+.card-hover{
+   transition:all 0.3s ease;
+   cursor:pointer;
+}
+
+/* ao passar o mouse: sobre o card e adiciona sombra mais forte */
+.card-hover:hover{
+   transform: translateY(-8px);
+   box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Zoom leve na imagem sincronizado com o hover do card */
+.card-hover:hover .vitrine-img{
+   transform: scale(1.05);
+} 
